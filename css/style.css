@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fjalla+One&family=Indie+Flower&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+    --color-negro-primario: #222831;
+    --color-gris-primario: #393E46;
+    --color-crema-primario: #948979;
+    --color-blanco-primario: #DFD0B8;
+    --color-cafe-secundario: #3E3232;
+    --color-moka-secundario: #503C3C;
+    --color-carton-secundario: #7E6363;
+    --color-beige-secundario: #A87C7C;
+    --color-footer-fondo: #070F2B;
+    --color-footer-letra: #9290C3;
+    --titulos1: "Bebas Neue", sans-serif;
+    --titulos2: "Fjalla One", sans-serif;
+    --titulos3: "Josefin Sans", sans-serif;
+    --contenido1: "Lobster Two", sans-serif;
+    --contenido2: "Indie Flower", cursive;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background-color: var(--color-negro-primario);
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    margin: 0;
+    background-color: var(--color-blanco-primario);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header a {
+    text-decoration: none;
+}
+
+header a h1 {
+    margin: 0;
+    font-family: var(--titulos1);
+    color: var(--color-negro-primario);
+    font-size: 5rem;
+}
+
+header h2 {
+    margin: 0;
+    font-family: var(--titulos2);
+    color: var(--color-negro-primario);
+    font-size: 3rem;
+}
+
+header h3 {
+    margin: 0 0 .5rem 0;
+    font-family: var(--titulos3);
+    color: var(--color-negro-primario);
+    font-size: 1.5rem;
+}
+
+.mainInicio {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+main h1 {
+    color: var(--color-blanco-primario);
+    font-family: var(--titulos1);
+    font-size: 10rem;
+    margin: 1rem;
+}
+
+main h2 {
+    color: var(--color-blanco-primario);
+    font-family: var(--titulos2);
+    font-size: 4rem;
+    margin: 1rem;
+}
+
+main p {
+    color: var(--color-blanco-primario);
+    font-family: var(--titulos3);
+    margin: .5rem;
+    font-size: 1.5rem;
+}
+
+.mainContenido {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+article {
+    padding: 1rem;
+    background-color: var(--color-negro-primario);
+    margin: 3rem;
+    border-radius: 2rem;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    max-width: 600px
+}
+
+article h2 {
+    font-family: var(--titulos2);
+    font-size: 3rem;
+    color: var(--color-blanco-primario);
+}
+
+article h3 {
+    font-family: var(--titulos3);
+    font-size: 1.5rem;
+    color: var(--color-blanco-primario);
+}
+
+article p {
+    font-family: var(--contenido2);
+    font-weight: 500;
+}
+
+article .locacion {
+    font-size: 1rem;
+}
+
+article:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 1rem 0.3rem rgba(255, 255, 255, 0.1);
+}
+
+img {
+    min-width: 300px;
+    max-width: 600px;
+    min-height: 300px;
+    max-height: 600px;
+    border-radius: 1rem;
+}
+
+.contenedorBotones {
+    display: flex;
+    gap: 3rem;
+    margin: 2rem;
+}
+
+.contenedorBotones a button {
+    height: 6rem;
+    width: 12rem;
+    border-radius: 0.6rem;
+    background-color: var(--color-crema-primario);
+    color: var(--color-negro-primario);
+    font-family: var(--titulos2);
+    font-size: 2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.4s ease, border-color 0.4s ease, color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.contenedorBotones a button:hover {
+    border-color: var(--color-crema-primario);
+    background-color: var(--color-negro-primario);
+    color: var(--color-crema-primario);
+    transform: scale(1.2);
+    box-shadow: 0 0 1rem 0.3rem rgba(255, 255, 255, 0.1);
+}
+
+footer {
+    margin-top: 3rem;
+    width: 100%;
+    background-color: var(--color-footer-fondo);
+    color: var(--color-footer-letra);
+    text-align: center;
+}
+
+footer h3 {
+    font-family: var(--titulos3);
+}
+
+#eslogan {
+    font-style: italic;
+}
+
+footer p {
+    font-family: var(--contenido2);
+}
