@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fjalla+One&family=Indie+Flower&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fjalla+One&family=Indie+Flower&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Poiret+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 
 :root {
     --color-negro-primario: #222831;
@@ -11,11 +12,15 @@
     --color-beige-secundario: #A87C7C;
     --color-footer-fondo: #070F2B;
     --color-footer-letra: #9290C3;
+    --color-aside-fondo: #3F4F44;
+    --color-aside-fuente: #DCD7C9;
     --titulos1: "Bebas Neue", sans-serif;
     --titulos2: "Fjalla One", sans-serif;
     --titulos3: "Josefin Sans", sans-serif;
     --contenido1: "Lobster Two", sans-serif;
     --contenido2: "Indie Flower", cursive;
+    --contenido3: "Poiret One", sans-serif;
+    --contenido4: "Patrick Hand", cursive;
 }
 
 html, body {
@@ -46,13 +51,31 @@ header a h1 {
     font-family: var(--titulos1);
     color: var(--color-negro-primario);
     font-size: 5rem;
+    transition: transform 0.4s ease, color 0.4s ease;
 }
 
-header h2 {
+header a h1:hover{
+    transform: scale(1.1);
+    color: var(--color-footer-fondo);
+}
+
+header ul {
+    display: flex;
+    list-style: none;
+    gap: 3rem;
+}
+
+header ul li a h2 {
     margin: 0;
     font-family: var(--titulos2);
     color: var(--color-negro-primario);
     font-size: 3rem;
+    transition: transform 0.4s ease, color 0.4s ease;
+}
+
+header ul li a h2:hover {
+    transform: scale(1.2);
+    color: var(--color-footer-fondo);
 }
 
 header h3 {
@@ -85,6 +108,13 @@ main h2 {
     margin: 1rem;
 }
 
+main h3 {
+    color: var(--color-blanco-primario);
+    font-family: var(--titulos3);
+    font-size: 2rem;
+    margin: 1rem;
+}
+
 main p {
     color: var(--color-blanco-primario);
     font-family: var(--titulos3);
@@ -93,6 +123,7 @@ main p {
 }
 
 .mainContenido {
+    margin-right: 10vw;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -101,13 +132,95 @@ main p {
     margin-top: 2rem;
 }
 
+.mainContenido .articuloDestacado {
+    max-width: 600px
+}
+
+.mainNoticias {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+}
+
+.mainNoticias h2, .mainNoticias h3 {
+    text-align: center;
+}
+
+.mainNoticias section {
+    width: 70vw;
+    margin: 3rem;
+    margin-left: 5rem;
+}
+
+.mainNoticias section .articuloNoticia {
+    display: flex;
+    width: 60vw;
+    margin: 3rem;
+}
+
+.mainNoticias section .articuloNoticia h2, .mainNoticias section .articuloNoticia h3 {
+    text-align: left;
+}
+
+.mainContacto {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mainContacto div form{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.mainContacto div h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin: 0;
+}
+
+.mainContacto div h3 {
+    text-align: center;
+}
+
+label {
+    color: var(--color-blanco-primario);
+    font-family: var(--titulos3);
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+input {
+    font-size: 1rem;
+    width: 12vw;
+    height: 2.5vh;
+    text-align: center;
+    border-radius: 6px;
+}
+
+textarea {
+    font-size: 1rem;
+    width: 12vw;
+    height: 6vh;
+    border-radius: 6px;
+    resize: none;
+}
+
+.descripcionInicio {
+    width: 70vw;
+}
+
 article {
     padding: 1rem;
     background-color: var(--color-negro-primario);
     margin: 3rem;
     border-radius: 2rem;
     transition: transform 0.5s ease, box-shadow 0.5s ease;
-    max-width: 600px
 }
 
 article h2 {
@@ -136,11 +249,20 @@ article:hover {
     box-shadow: 0 0 1rem 0.3rem rgba(255, 255, 255, 0.1);
 }
 
-img {
+section img {
     min-width: 300px;
     max-width: 600px;
     min-height: 300px;
     max-height: 600px;
+    border-radius: 1rem;
+}
+
+video {
+    min-width: 300px;
+    max-width: 600px;
+    min-height: 300px;
+    max-height: 600px;
+    object-fit: cover;
     border-radius: 1rem;
 }
 
@@ -169,6 +291,127 @@ img {
     color: var(--color-crema-primario);
     transform: scale(1.2);
     box-shadow: 0 0 1rem 0.3rem rgba(255, 255, 255, 0.1);
+}
+
+.enviarCorreo {
+    margin-top: 1rem;
+    height: 4rem;
+    width: 9rem;
+    font-size: 2.2rem;
+    font-family: var(--titulos2);
+    color: var(--color-negro-primario);
+    background-color: var(--color-crema-primario);
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.4s ease, border-color 0.4s ease, color 0.4s ease, background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.enviarCorreo:hover {
+    border-color: var(--color-crema-primario);
+    background-color: var(--color-negro-primario);
+    color: var(--color-crema-primario);
+    transform: scale(1.2);
+    box-shadow: 0 0 1rem 0.3rem rgba(255, 255, 255, 0.1);
+}
+
+.redesContacto {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 22vh;
+    left: 0;
+    background-color: var(--color-aside-fondo);
+    border-radius: 15px;
+    padding: 1rem;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, left 0.4s ease;
+}
+
+.redesContacto:hover {
+    transform: scale(1.05);
+    left: 2vw;
+    box-shadow: 0 0 1rem 0.3rem rgba(255, 255, 255, 0.5);
+}
+
+.redesContacto h2, .redesContacto h3 {
+    color: var(--color-aside-fuente);
+}
+
+.RShyper {
+    padding: 0.3rem;
+    display: flex;
+    align-items:center;
+    justify-content: start;
+    color: black;
+    font-weight: 500;
+    font-family: var(--contenido4);
+    font-size: 1.3rem;
+    text-decoration: none;
+}
+
+.imgRS {
+    fill: var(--color-aside-fuente);
+    margin-right: -1rem;
+    width: 5vw;
+    height: 5vh;
+}
+
+aside {
+    background-color: var(--color-aside-fondo);
+    position: fixed;
+    width: 20vw;
+    height: 70vh;
+    margin: 15vh 0.5rem 0 0;
+    padding: 1rem;
+    border-radius: 1rem;
+    color: var(--color-aside-fuente);
+    top: 0;
+    right: 0;
+    overflow-y: hidden;
+    transition: right 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
+}
+
+aside:hover {
+    box-shadow: 0 0 1rem 0.3rem rgba(255, 255, 255, 0.5);
+    right: 3vw;
+    transform: scale(1.05);
+    overflow-y: auto;
+}
+
+aside::-webkit-scrollbar {
+    width: 0;
+}
+
+aside h2 {
+    margin: 1rem;
+    font-family: var(--titulos2);
+    text-align: center;
+    font-size: 3rem;
+}
+
+aside h3 {
+    margin: 1rem;
+    font-family: var(--titulos3);
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+aside p {
+    margin: 0;
+    font-family: var(--contenido2);
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+aside ul li {
+    margin: 0.5rem;
+}
+
+aside ul li a {
+    text-decoration: none;
+    color: var(--color-aside-fuente);
+    font-family: var(--contenido4);
+    font-size: 1.3rem;
 }
 
 footer {
